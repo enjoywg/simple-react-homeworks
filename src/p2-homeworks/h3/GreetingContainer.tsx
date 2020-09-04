@@ -17,14 +17,14 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [error, setError] = useState<string>("");
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+            setError("")
             setName(e.currentTarget.value);
     };
-    const addUser = (name: string) => {
+    const addUser = () => {
         if (name !== "") {
             alert(`Hello  ${name}!`);
             setName("");
             addUserCallback(name)
-            console.log(users)
         } else {setError("Name is empty")}
     };
 
